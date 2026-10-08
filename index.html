@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Dheerendra – Senior iOS Developer with 10+ years building Swift and SwiftUI apps. Available for freelance and contract work.">
+<meta name="description" content="Dheerendra – Senior iOS Developer with 10+ years building Swift and SwiftUI apps, including secure VPN and ZTNA-style apps. Available for freelance and contract work.">
 <style>*,*::before,*::after{box-sizing:border-box}img{max-width:100%}[hidden]{display:none!important}body{margin:0}</style>
 <title>Dheerendra iOS Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -78,6 +78,10 @@ p{margin:0}
 .muted{color:var(--muted);max-width:65ch}
 .tags a,.meta a{color:var(--accent);text-decoration:none}
 .tags a:hover,.meta a:hover{text-decoration:underline}
+/* security */
+.layers{display:grid;gap:0;border-top:1px solid var(--line)}
+.layer{display:grid;gap:10px;padding-block:20px;border-bottom:1px solid var(--line);min-width:0}
+.layer h3{font-size:1.1rem}
 /* contact */
 .contact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;display:grid;gap:16px}
 .contact h2{font-size:clamp(1.6rem,4vw,2.2rem)}
@@ -94,7 +98,7 @@ footer{font:.8rem var(--mono);color:var(--muted)}
   <header class="hero">
     <span class="status"><i></i>Available for freelance &amp; contract work</span>
     <h1>Dheerendra<br><span>Senior iOS Developer</span></h1>
-    <p class="lede">I've spent 10+ years building and shipping iOS apps in Swift, SwiftUI and Objective-C, from Xcode project setup to App Store release. My work covers e-commerce, travel, ride-hailing, VPN/security and IoT access control, with clean code and clear communication with clients.</p>
+    <p class="lede">I've spent 10+ years building and shipping iOS apps in Swift, SwiftUI and Objective-C, from Xcode project setup to App Store release. My work covers e-commerce, travel, ride-hailing, network and app security, VPN/ZTNA-style apps and IoT access control, with clean code and clear communication with clients.</p>
     <div class="stats">
       <div><b>10+</b><span>years in iOS</span></div>
       <div><b>6</b><span>featured projects</span></div>
@@ -117,6 +121,20 @@ footer{font:.8rem var(--mono);color:var(--muted)}
         <div class="chips"><span class="chip">REST APIs</span><span class="chip">Firebase</span><span class="chip">Push notifications</span><span class="chip">Google Maps</span><span class="chip">Stripe</span><span class="chip">PayPal</span><span class="chip">Razorpay</span><span class="chip">Braintree</span><span class="chip">Square</span></div></div>
       <div><span class="label">Process &amp; shipping</span>
         <div class="chips"><span class="chip">MVVM</span><span class="chip">Xcode</span><span class="chip">App Store release</span><span class="chip">Git · GitLab · Bitbucket</span><span class="chip">CI/CD</span><span class="chip">Figma / XD handoff</span></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="security" aria-labelledby="sec-h">
+    <span class="label">Security</span>
+    <h2 id="sec-h">Secure apps, from the network up</h2>
+    <p class="muted">I build iOS apps where security is the product, like QubitGuard's post-quantum VPN, and harden everyday apps that handle payments, locations and personal data.</p>
+    <div class="layers">
+      <div class="layer"><span class="label">Network layer</span><h3>Traffic that can't be read or tampered with</h3>
+        <div class="chips"><span class="chip">NetworkExtension</span><span class="chip">Packet tunnel provider</span><span class="chip">TLS / ATS</span><span class="chip">Certificate pinning</span><span class="chip">On-demand rules</span><span class="chip">Kill switch</span></div></div>
+      <div class="layer"><span class="label">Application layer</span><h3>Data and sessions kept safe on the device</h3>
+        <div class="chips"><span class="chip">Keychain</span><span class="chip">CryptoKit</span><span class="chip">Secure Enclave</span><span class="chip">Face ID / Touch ID</span><span class="chip">OAuth 2.0 / JWT</span><span class="chip">Data protection</span></div></div>
+      <div class="layer"><span class="label">VPN &amp; ZTNA apps</span><h3>Private access, verified on every connection</h3>
+        <div class="chips"><span class="chip">VPN clients</span><span class="chip">ZTNA-style access</span><span class="chip">Device posture checks</span><span class="chip">Per-app VPN</span><span class="chip">Post-quantum encryption</span><span class="chip">No-logs design</span></div></div>
     </div>
   </section>
 
