@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Dheerendra – Senior iOS Developer with 10+ years building Swift and SwiftUI apps. Available for freelance and contract work.">
+<style>*,*::before,*::after{box-sizing:border-box}img{max-width:100%}[hidden]{display:none!important}body{margin:0}</style>
+<title>Dheerendra iOS Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single narrow column, a "build card" hero, then skills, projects as App Store-style rows, services, contact */
+:root{
+  --bg:#F3F5F8; --surface:#FFFFFF; --fg:#141A24; --muted:#5A6577; --line:#DCE1E9;
+  --accent:#E2551B; --accent-soft:#FBE7DE; --ok:#1F8A5B;
+  --display:"Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1219; --surface:#161C26; --fg:#E8ECF2; --muted:#98A3B5; --line:#273041;
+  --accent:#FF7A3D; --accent-soft:#3A2116; --ok:#4CC38A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1219; --surface:#161C26; --fg:#E8ECF2; --muted:#98A3B5; --line:#273041;
+  --accent:#FF7A3D; --accent-soft:#3A2116; --ok:#4CC38A; color-scheme:dark}
+
+body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);padding-inline:20px;padding-block:0}
+.wrap{max-width:860px;margin:0 auto;padding-block:48px 64px;display:grid;gap:56px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+h2{font-size:1.5rem}
+p{margin:0}
+.label{font:500 .75rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.draft{border:1px dashed var(--accent);background:var(--accent-soft);border-radius:10px;padding:12px 16px;font-size:.9rem}
+.draft b{color:var(--accent)}
+
+/* hero */
+.hero{display:grid;gap:20px}
+.status{display:inline-flex;align-items:center;gap:8px;font:500 .8rem/1 var(--mono);color:var(--ok)}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 20%,transparent)}
+.hero h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:700;letter-spacing:-.02em}
+.hero h1 span{color:var(--accent)}
+.lede{font-size:1.15rem;color:var(--muted);max-width:60ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;font:400 .85rem/1.4 var(--mono);color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{font:600 .95rem/1 var(--body);padding:12px 18px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;text-decoration:none}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* skills */
+.section{display:grid;gap:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 .85rem/1 var(--mono);padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:var(--surface)}
+.skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.skillgrid > div{display:grid;gap:10px;min-width:0}
+
+/* projects */
+.apps{display:grid;gap:0;border-top:1px solid var(--line)}
+.app{display:grid;grid-template-columns:64px 1fr;gap:16px;padding-block:20px;border-bottom:1px solid var(--line)}
+.icon{width:64px;height:64px;border-radius:15px;display:grid;place-items:center;font:700 1.4rem/1 var(--display);color:#fff}
+.app > div{min-width:0;display:grid;gap:6px}
+.app h3{font-size:1.15rem}
+.app p{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px 14px;font:400 .78rem/1.3 var(--mono);color:var(--muted)}
+.ph{color:var(--accent);font-style:italic}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:grid;gap:8px;align-content:start}
+.svc h3{font-size:1.05rem}
+.svc p{color:var(--muted);font-size:.95rem}
+
+/* stats & links */
+.stats{display:flex;flex-wrap:wrap;gap:12px 40px}
+.stats div{display:grid;gap:2px}
+.stats b{font:700 2rem/1 var(--display);color:var(--accent);font-variant-numeric:tabular-nums}
+.stats span{font:.8rem var(--mono);color:var(--muted)}
+.muted{color:var(--muted);max-width:65ch}
+.tags a,.meta a{color:var(--accent);text-decoration:none}
+.tags a:hover,.meta a:hover{text-decoration:underline}
+/* contact */
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;display:grid;gap:16px}
+.contact h2{font-size:clamp(1.6rem,4vw,2.2rem)}
+.email{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.email code{font:500 1rem/1.3 var(--mono);user-select:all;word-break:break-all}
+#copied{font:.8rem var(--mono);color:var(--ok)}
+footer{font:.8rem var(--mono);color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.status i{animation:pulse 2.4s ease-in-out infinite}@keyframes pulse{50%{opacity:.45}}}
+</style>
+
+</head>
+<body>
+<main class="wrap">
+  <header class="hero">
+    <span class="status"><i></i>Available for freelance &amp; contract work</span>
+    <h1>Dheerendra<br><span>Senior iOS Developer</span></h1>
+    <p class="lede">I've spent 10+ years building and shipping iOS apps in Swift, SwiftUI and Objective-C, from Xcode project setup to App Store release. My work covers e-commerce, travel, ride-hailing, VPN/security and IoT access control, with clean code and clear communication with clients.</p>
+    <div class="stats">
+      <div><b>10+</b><span>years in iOS</span></div>
+      <div><b>6</b><span>featured projects</span></div>
+      <div><b>5</b><span>payment gateways</span></div>
+    </div>
+    <div class="meta"><span>Remote worldwide</span><span>English</span><span>Agile / Scrum</span></div>
+    <div class="cta">
+      <a class="btn primary" href="#contact">Hire me</a>
+      <a class="btn" href="#work">See my work</a>
+    </div>
+  </header>
+
+  <section class="section" aria-labelledby="skills">
+    <span class="label">Toolkit</span>
+    <h2 id="skills">What I work with</h2>
+    <div class="skillgrid">
+      <div><span class="label">Languages &amp; UI</span>
+        <div class="chips"><span class="chip">Swift</span><span class="chip">SwiftUI</span><span class="chip">UIKit</span><span class="chip">Objective-C</span><span class="chip">Custom UI &amp; animation</span></div></div>
+      <div><span class="label">Integrations</span>
+        <div class="chips"><span class="chip">REST APIs</span><span class="chip">Firebase</span><span class="chip">Push notifications</span><span class="chip">Google Maps</span><span class="chip">Stripe</span><span class="chip">PayPal</span><span class="chip">Razorpay</span><span class="chip">Braintree</span><span class="chip">Square</span></div></div>
+      <div><span class="label">Process &amp; shipping</span>
+        <div class="chips"><span class="chip">MVVM</span><span class="chip">Xcode</span><span class="chip">App Store release</span><span class="chip">Git · GitLab · Bitbucket</span><span class="chip">CI/CD</span><span class="chip">Figma / XD handoff</span></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="work" aria-labelledby="work-h">
+    <span class="label">Selected work</span>
+    <h2 id="work-h">Apps I've shipped</h2>
+    <div class="apps">
+      <article class="app">
+        <div class="icon" style="background:#2B3A67">QG</div>
+        <div><h3>QubitGuard VPN</h3>
+          <p>A post-quantum encryption VPN for iOS with fast global servers, a no-logs policy, an automatic kill switch and one-tap connect.</p>
+          <div class="tags"><span>2025 · QuantumAge, Inc.</span><span>Swift · VPN · Encryption</span><a href="https://apps.apple.com/us/app/qubitguard-vpn/id6745782651" target="_blank" rel="noopener">App Store ↗</a></div></div>
+      </article>
+      <article class="app">
+        <div class="icon" style="background:#E2551B">XM</div>
+        <div><h3>Xchange Mall — Super App</h3>
+          <p>A feature-rich super app for iOS and Android. Native iOS build with custom UI, API and Firebase integration, and Google Maps features.</p>
+          <div class="tags"><span>2020</span><span>Swift · Objective-C · Firebase · Google Maps</span><a href="https://apps.apple.com/us/app/xchange-mall-super-app/id1304608184" target="_blank" rel="noopener">App Store ↗</a></div></div>
+      </article>
+      <article class="app">
+        <div class="icon" style="background:#8A5A2B">BF</div>
+        <div><h3>Ballu Flutes</h3>
+          <p>A shopping app for iOS and Android. Native iOS in Swift/SwiftUI with Firebase, backend API integration and custom UI.</p>
+          <div class="tags"><span>2020</span><span>Swift · SwiftUI · Firebase</span><a href="https://apps.apple.com/in/app/balluflute/id1533466244" target="_blank" rel="noopener">App Store ↗</a></div></div>
+      </article>
+      <article class="app">
+        <div class="icon" style="background:#1F8A5B">CA</div>
+        <div><h3>CARRUBA</h3>
+          <p>Separate User and Driver apps. Built both iOS apps, including API integration, live location and maps, and Firebase.</p>
+          <div class="tags"><span>2018</span><span>Swift · Objective-C · Firebase · Google Maps</span><a href="https://itunes.apple.com/us/app/carruba/id1424119909" target="_blank" rel="noopener">App Store ↗</a></div></div>
+      </article>
+      <article class="app">
+        <div class="icon" style="background:#1F6FB2">ME</div>
+        <div><h3>Mauritius Explored</h3>
+          <p>A travel guide app for iOS and Android. Native iOS with REST APIs, Firebase, Google Maps and mobile UI.</p>
+          <div class="tags"><span>2016</span><span>Swift · Firebase · Google Maps</span><a href="https://apps.apple.com/us/app/mauritius-explored/id1012328297" target="_blank" rel="noopener">App Store ↗</a></div></div>
+      </article>
+      <article class="app">
+        <div class="icon" style="background:#5B6475">CC</div>
+        <div><h3>CANCOM Visitor &amp; Fleet Access Suite</h3>
+          <p>Access-control and fleet apps: visitor gate codes with remote gate control, estate access, car-park vehicle scanning, and CliQ keyless hourly car rental.</p>
+          <div class="tags"><span>2015–2018 · CANCOM/CanTech</span><span>Objective-C · Swift · REST APIs</span><a href="https://apps.apple.com/in/app/cancom-visitors/id1469345528" target="_blank" rel="noopener">CanCom Visitors ↗</a></div></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="exp">
+    <span class="label">Experience</span>
+    <h2 id="exp">Senior Manager (Mobile)</h2>
+    <p class="muted">Aug 2011 – Feb 2023 · Led native iOS delivery on client projects including Xchange Mall, Mauritius Explored, CARRUBA and Ballu Flutes, working alongside Laravel/MySQL backends and Android teams.</p>
+  </section>
+
+  <section class="section" aria-labelledby="svc">
+    <span class="label">Services</span>
+    <h2 id="svc">How I can help</h2>
+    <div class="services">
+      <div class="svc"><h3>New app builds</h3><p>Native iOS apps from idea to App Store: architecture, UI, API integration and release.</p></div>
+      <div class="svc"><h3>Payments, maps &amp; Firebase</h3><p>Secure checkout with Stripe, PayPal, Razorpay, Braintree or Square, plus location features and push notifications.</p></div>
+      <div class="svc"><h3>Features, fixes &amp; SwiftUI</h3><p>Add features to an existing codebase, fix crashes, and move UIKit or Objective-C screens to Swift and SwiftUI.</p></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="ct">
+    <span class="label">Contact</span>
+    <h2 id="ct">Have an iOS project? Let's talk.</h2>
+    <p>Open to freelance, contract and part-time work.</p>
+    <div class="email">
+      <code id="mail">eeshu161286@gmail.com</code>
+      <button class="btn" id="copy" type="button">Copy email</button>
+      <span id="copied" aria-live="polite"></span>
+    </div>
+    <div class="meta"><a href="https://www.codementor.io/@dheeios" target="_blank" rel="noopener">Codementor: @dheeios ↗</a><span>Slack: Dhee iOS (iOS Developers)</span></div>
+  </section>
+
+  <footer>© 2026 Dheerendra</footer>
+</main>
+
+<script>
+document.getElementById('copy').addEventListener('click',function(){
+  var t=document.getElementById('mail').textContent, s=document.getElementById('copied');
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var w=getSelection();w.removeAllRanges();w.addRange(r);s.textContent='Selected. Press Ctrl+C to copy';}
+  try{navigator.clipboard.writeText(t).then(function(){s.textContent='Copied';},sel);}catch(e){sel();}
+});
+</script>
+
+</body>
+</html>
