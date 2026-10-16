@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Dheerendra – icon designer and Lottie animator. Pixel-perfect icon sets and lightweight Lottie animations, built by an iOS developer who ships them in real apps.">
+<style>*,*::before,*::after{box-sizing:border-box}img{max-width:100%}[hidden]{display:none!important}body{margin:0}</style>
+<title>Dheerendra Design Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single narrow column, a "build card" hero, then skills, projects as App Store-style rows, services, contact */
+:root{
+  --bg:#F3F5F8; --surface:#FFFFFF; --fg:#141A24; --muted:#5A6577; --line:#DCE1E9;
+  --accent:#E2551B; --accent-soft:#FBE7DE; --ok:#1F8A5B;
+  --display:"Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1219; --surface:#161C26; --fg:#E8ECF2; --muted:#98A3B5; --line:#273041;
+  --accent:#FF7A3D; --accent-soft:#3A2116; --ok:#4CC38A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1219; --surface:#161C26; --fg:#E8ECF2; --muted:#98A3B5; --line:#273041;
+  --accent:#FF7A3D; --accent-soft:#3A2116; --ok:#4CC38A; color-scheme:dark}
+
+body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);padding-inline:20px;padding-block:0}
+.wrap{max-width:860px;margin:0 auto;padding-block:48px 64px;display:grid;gap:56px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+h2{font-size:1.5rem}
+p{margin:0}
+.label{font:500 .75rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.draft{border:1px dashed var(--accent);background:var(--accent-soft);border-radius:10px;padding:12px 16px;font-size:.9rem}
+.draft b{color:var(--accent)}
+
+/* hero */
+.hero{display:grid;gap:20px}
+.status{display:inline-flex;align-items:center;gap:8px;font:500 .8rem/1 var(--mono);color:var(--ok)}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 20%,transparent)}
+.hero h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:700;letter-spacing:-.02em}
+.hero h1 span{color:var(--accent)}
+.lede{font-size:1.15rem;color:var(--muted);max-width:60ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;font:400 .85rem/1.4 var(--mono);color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{font:600 .95rem/1 var(--body);padding:12px 18px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;text-decoration:none}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* skills */
+.section{display:grid;gap:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 .85rem/1 var(--mono);padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:var(--surface)}
+.skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.skillgrid > div{display:grid;gap:10px;min-width:0}
+
+/* projects */
+.apps{display:grid;gap:0;border-top:1px solid var(--line)}
+.app{display:grid;grid-template-columns:64px 1fr;gap:16px;padding-block:20px;border-bottom:1px solid var(--line)}
+.icon{width:64px;height:64px;border-radius:15px;display:grid;place-items:center;font:700 1.4rem/1 var(--display);color:#fff}
+.app > div{min-width:0;display:grid;gap:6px}
+.app h3{font-size:1.15rem}
+.app p{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px 14px;font:400 .78rem/1.3 var(--mono);color:var(--muted)}
+.ph{color:var(--accent);font-style:italic}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:grid;gap:8px;align-content:start}
+.svc h3{font-size:1.05rem}
+.svc p{color:var(--muted);font-size:.95rem}
+
+/* stats & links */
+.stats{display:flex;flex-wrap:wrap;gap:12px 40px}
+.stats div{display:grid;gap:2px}
+.stats b{font:700 2rem/1 var(--display);color:var(--accent);font-variant-numeric:tabular-nums}
+.stats span{font:.8rem var(--mono);color:var(--muted)}
+.muted{color:var(--muted);max-width:65ch}
+.tags a,.meta a{color:var(--accent);text-decoration:none}
+.tags a:hover,.meta a:hover{text-decoration:underline}
+/* security */
+.layers{display:grid;gap:0;border-top:1px solid var(--line)}
+.layer{display:grid;gap:10px;padding-block:20px;border-bottom:1px solid var(--line);min-width:0}
+.layer h3{font-size:1.1rem}
+/* contact */
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;display:grid;gap:16px}
+.contact h2{font-size:clamp(1.6rem,4vw,2.2rem)}
+.email{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.email code{font:500 1rem/1.3 var(--mono);user-select:all;word-break:break-all}
+#copied{font:.8rem var(--mono);color:var(--ok)}
+footer{font:.8rem var(--mono);color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.status i{animation:pulse 2.4s ease-in-out infinite}@keyframes pulse{50%{opacity:.45}}}
+</style>
+<style>
+.nav{display:flex;gap:16px;font:500 .85rem/1 var(--mono)}
+.nav a{color:var(--muted);text-decoration:none}.nav a[aria-current]{color:var(--accent)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.tile{aspect-ratio:1;border-radius:14px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;overflow:hidden;min-width:0}
+.tile img,.tile .lot{width:70%;height:70%;object-fit:contain}
+.tile.empty{border-style:dashed;color:var(--muted);font:.75rem/1.3 var(--mono);text-align:center;padding:12px}
+.cap{font:.75rem var(--mono);color:var(--muted);margin-top:4px}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <nav class="nav"><a href="index.html">iOS development</a><a href="design.html" aria-current="page">Icons &amp; Lottie</a></nav>
+
+  <header class="hero">
+    <span class="status"><i></i>Open to icon &amp; animation projects</span>
+    <h1>Dheerendra<br><span>Icon Designer &amp; Lottie Animator</span></h1>
+    <p class="lede">I design clean, consistent icon sets and lightweight Lottie animations. After 10+ years building iOS apps, I know how icons look at 20px in a tab bar and how an animation has to perform on a real device.</p>
+    <div class="cta">
+      <a class="btn primary" href="#icons">See icons</a>
+      <a class="btn" href="#lottie">See animations</a>
+    </div>
+  </header>
+
+  <section class="section" aria-labelledby="spec">
+    <span class="label">Specialties</span>
+    <h2 id="spec">What I design</h2>
+    <div class="services">
+      <div class="svc"><h3>Icon Designer</h3><p>Line, glyph and filled icon sets on a consistent grid, plus app icons. Delivered as SVG, PNG and SF Symbols-ready files.</p>
+        <div class="chips"><span class="chip">Line</span><span class="chip">Glyph</span><span class="chip">Duotone</span><span class="chip">App icons</span></div></div>
+      <div class="svc"><h3>Lottie Animation</h3><p>Animated icons, loaders, onboarding and success states. Small JSON files that run smoothly on iOS, Android and the web.</p>
+        <div class="chips"><span class="chip">Animated icons</span><span class="chip">Loaders</span><span class="chip">Micro-interactions</span><span class="chip">dotLottie</span></div></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="tools">
+    <span class="label">Toolkit</span>
+    <h2 id="tools">Tools &amp; formats</h2>
+    <div class="chips"><span class="chip">Figma</span><span class="chip">Adobe Illustrator</span><span class="chip">After Effects + Bodymovin</span><span class="chip">LottieFiles</span><span class="chip">SVG · PNG · PDF</span><span class="chip">Lottie JSON</span></div>
+  </section>
+
+  <section class="section" id="icons" aria-labelledby="icons-h">
+    <span class="label">Icons</span>
+    <h2 id="icons-h">Icon work</h2>
+    <div class="gallery" id="icon-gallery"></div>
+  </section>
+
+  <section class="section" id="lottie" aria-labelledby="lottie-h">
+    <span class="label">Lottie</span>
+    <h2 id="lottie-h">Animations</h2>
+    <div class="gallery" id="lottie-gallery"></div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="ct">
+    <span class="label">Contact</span>
+    <h2 id="ct">Need icons or animations? Let's talk.</h2>
+    <div class="email">
+      <code id="mail">eeshu161286@gmail.com</code>
+      <button class="btn" id="copy" type="button">Copy email</button>
+      <span id="copied" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <footer>© 2026 Dheerendra</footer>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+<script>
+/* ADD YOUR WORK HERE.
+   Put files in a "design" folder in the repo, then list them below, e.g.
+   ICONS:  { src: "design/icons/wifi-shield.svg", title: "Secure Wi-Fi" }
+   LOTTIE: { src: "design/lottie/loader.json",    title: "VPN connect loader" } */
+var ICONS  = [];
+var LOTTIE = [];
+
+function fill(id, items, isLottie, slots){
+  var g=document.getElementById(id);
+  items.forEach(function(it){
+    var f=document.createElement('figure'); f.style.margin=0;
+    var t=document.createElement('div'); t.className='tile';
+    if(isLottie && window.lottie){
+      var d=document.createElement('div'); d.className='lot'; t.appendChild(d);
+      lottie.loadAnimation({container:d,renderer:'svg',loop:true,autoplay:true,path:it.src});
+    } else {
+      var im=document.createElement('img'); im.src=it.src; im.alt=it.title||''; im.loading='lazy'; t.appendChild(im);
+    }
+    f.appendChild(t);
+    if(it.title){var c=document.createElement('figcaption'); c.className='cap'; c.textContent=it.title; f.appendChild(c);}
+    g.appendChild(f);
+  });
+  if(!items.length){ for(var i=0;i<slots;i++){ var e=document.createElement('div'); e.className='tile empty'; e.textContent='Work coming soon'; g.appendChild(e);} }
+}
+fill('icon-gallery', ICONS, false, 6);
+fill('lottie-gallery', LOTTIE, true, 3);
+
+document.getElementById('copy').addEventListener('click',function(){
+  var t=document.getElementById('mail').textContent, s=document.getElementById('copied');
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var w=getSelection();w.removeAllRanges();w.addRange(r);s.textContent='Selected. Press Ctrl+C to copy';}
+  try{navigator.clipboard.writeText(t).then(function(){s.textContent='Copied';},sel);}catch(e){sel();}
+});
+</script>
+</body>
+</html>
